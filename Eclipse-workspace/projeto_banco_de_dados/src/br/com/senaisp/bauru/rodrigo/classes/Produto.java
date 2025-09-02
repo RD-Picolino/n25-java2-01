@@ -24,6 +24,9 @@ public class Produto {
 		conn = ConectorBancoDados.getInstancia();
 	}
 
+	public Produto() {
+	}
+
 	public String getDescricao() {
 		return descricao;
 	}
