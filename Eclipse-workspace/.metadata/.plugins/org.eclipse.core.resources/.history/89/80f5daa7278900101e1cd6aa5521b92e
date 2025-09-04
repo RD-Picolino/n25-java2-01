@@ -1,0 +1,25 @@
+package projeto_javafx;
+
+import java.awt.Button;
+
+import javafx.application.Application;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+
+public class JavaFX_Exercicio01 extends Application {
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		Button btn01 = new Button("Clique aqui!");
+		Button btn02 = new Button("Clique aqui!");
+		Button btn03 = new Button("Clique aqui!");
+		
+		HBox root = new HBox(); 
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
