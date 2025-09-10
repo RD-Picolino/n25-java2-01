@@ -1,6 +1,5 @@
 package br.com.senaisp.bauru.classes;
 
-
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -31,38 +30,48 @@ public class ManipuladorImagensApp extends Application {
 		Media video = new Media(getClass().getResource("Videos/video.mp4").toString());
 		MediaPlayer mp = new MediaPlayer(video);
 		MediaView mvw = new MediaView(mp);
-		//Dimensionando o media view
+		// Dimensionando o media view
 		mvw.setFitWidth(1536);
 		mvw.setFitHeight(864);
-		//preserva a proporção do video
+		// preserva a proporção do video
 		mvw.setPreserveRatio(true);
 		mvw.setX(100);
 		mvw.setY(100);
-		//Criando os botões para tocar o video
+		// Criando os botões para tocar o video
 		Button btnPlay = new Button("Play");
 		Button btnPause = new Button("Pause");
 		Button btnStop = new Button("Stop");
-		//posicionando os botões
+		// posicionando os botões
 		btnPlay.setLayoutX(450);
 		btnPause.setLayoutX(700);
 		btnStop.setLayoutX(950);
-		
+
 		btnPlay.setLayoutY(50);
 		btnPause.setLayoutY(50);
 		btnStop.setLayoutY(50);
-		
-		//Criando as ações dos botões
-		btnPlay.setOnAction((ev)-> {
+
+		btnPlay.setPrefSize(200, 100);
+		btnPause.setPrefSize(200, 100);
+		btnStop.setPrefSize(200, 100);
+
+		// btnPlay.setStyle("font-family: \"Helvetica Neue\", Arial, sans-serif;
+		// font-size: 32px;");
+		// Criando as ações dos botões
+		btnPlay.setOnAction((ev) -> {
 			mp.play();
 		});
-		btnPause.setOnAction((ev)-> {
+		btnPause.setOnAction((ev) -> {
 			mp.pause();
 		});
-		btnStop.setOnAction((ev)-> {
+		btnStop.setOnAction((ev) -> {
 			mp.stop();
 		});
-		//Adicionando no noRoot
-		noRoot.getChildren().addAll(mvw, btnPlay, btnPause, btnStop);
+		// Adicionando no noRoot
+		// Criando o duke
+		Duke duk = new Duke();
+		duk.setLayoutX(20);
+		duk.setLayoutY(20);
+		noRoot.getChildren().addAll(mvw, btnPlay, btnPause, btnStop, duk);
 	}
 
 }
